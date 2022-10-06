@@ -1,0 +1,13 @@
+To specify properties file to use:
+    --defaultsFile <file>
+
+Mark all changeset as deployed
+    > liquibase changeset-sync
+    Preview sql commands:
+    > liquibase changeset-sync- sql
+
+Roll back to a tag
+    > liquibase rollback <tag>
+    Preview sql commands:
+    > liquibase rollback-sql <tag>
+
