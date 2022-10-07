@@ -21,7 +21,7 @@ pipeline {
         stage ('CI CD for database') {
             steps {
                 script {
-                    sh(script: 'liquibase --defaults-file=${WORKSPACE}/liquibase-mvn/liquibase.properties status --verbos',)
+                    sh(script: 'liquibase --defaults-file=${WORKSPACE}/liquibase-mvn/liquibase.properties --search-path=${WORKSPACE}/liquibase-mvn/src/main/resources/ status --verbos',)
                 }
             }
         }
