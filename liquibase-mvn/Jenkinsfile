@@ -8,6 +8,7 @@ pipeline {
         ENV = 'test'
         BUILD_TOOL = 'mvn'
         LIQUIBASE_HOME= 'D:/SETUPS/liquibase'
+        LIQUIBASE = '${LIQUIBASE_HOME}/liquibase.bat --defaults-file=${WORKSPACE}/liquibase-mvn/liquibase.properties --search-path=${WORKSPACE}/liquibase-mvn/src/main/resources/'
     }
 
     stages {
@@ -22,7 +23,10 @@ pipeline {
         stage ('CI CD for database') {
             steps {
                 script {
-                    sh(script: '${LIQUIBASE_HOME}/liquibase.bat --defaults-file=${WORKSPACE}/liquibase-mvn/liquibase.properties --search-path=${WORKSPACE}/liquibase-mvn/src/main/resources/ status --verbose')
+                    def liquibase = 
+                    sh(script: '${LIQUIBASE} status --verbose')
+                    sh(script: '${LIQUIBASE} release-locks')
+                    sh(script: '${LIQUIBASE} update')
                 }
             }
         }
