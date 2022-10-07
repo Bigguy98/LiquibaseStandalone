@@ -1,0 +1,41 @@
+pipeline {
+    agent {
+        node {
+            label 'agent01'
+        }
+    }
+    environment {
+        ENV = 'test'
+        BUILD_TOOL = 'mvn'
+    }
+
+    stages {
+        stage ('Init') {
+            steps {
+                script {
+                    sh(script: '',)
+                }
+            }
+        }
+
+        stage ('CI CD for database') {
+            steps {
+                script {
+                    sh(script: 'liquibase --defaults-file=${WORKSPACE}/liquibase-mvn/liquibase.properties status --verbos',)
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            echo "Always echo this"
+        }
+        failure {
+            echo "deploy fail"
+        }
+        success {
+            echo "deploy success"
+        }
+    }
+}
