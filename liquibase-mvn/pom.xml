@@ -64,12 +64,6 @@
 				<configuration>
 					<propertyFile>liquibase.properties</propertyFile>
 				</configuration>
-<!--				<dependencies>-->
-<!--					<dependency>-->
-<!--						<groupId><db_type></groupId>-->
-<!--						<artifactId><db_type></artifactId>-->
-<!--					</dependency>-->
-<!--				</dependencies>-->
 			</plugin>
 		</plugins>
 	</build>

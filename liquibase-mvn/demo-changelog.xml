@@ -1,0 +1,51 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="Admin (generated)" id="1665113524363-1">
+        <createTable tableName="animal_table">
+            <column name="id" type="INT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="breed" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Admin (generated)" id="1665113524363-2">
+        <createTable tableName="name_table">
+            <column name="fullname" type="CHAR(20)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Admin (generated)" id="1665113524363-3">
+        <createTable tableName="province_table">
+            <column name="province" type="CHAR(20)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Admin (generated)" id="1665113524363-4">
+        <createTable tableName="sales">
+            <column name="sales_team" type="CHAR(20)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Admin (generated)" id="1665113524363-5">
+        <createTable tableName="sql_pet_table">
+            <column name="id" type="INT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="breed" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Admin (generated)" id="1665113524363-6">
+        <createTable tableName="state_table">
+            <column name="state" type="CHAR(20)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Admin (generated)" id="1665113524363-7">
+        <createTable tableName="test_create_table">
+            <column name="id" type="INT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

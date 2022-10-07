@@ -1,3 +1,9 @@
 To update liquibase:
     mvn liquibase:update
-    mvn liquibase:status
+Get status
+    mvn liquibase:status -Dliquibase.verbose=true
+Generate changelog file:
+    mvn liquibase:generateChangeLog -Dliquibase.outputChangeLogFile=demo-changelog.xml
+More information:
+    https://docs.liquibase.com/tools-integrations/maven/maven-pom-file.html
+Note: only run on bash or shell script, not work on cmd terminal.
