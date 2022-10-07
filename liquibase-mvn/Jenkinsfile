@@ -24,9 +24,9 @@ pipeline {
             steps {
                 script {
                     def LIQUIBASE = '${LIQUIBASE_HOME}/liquibase.bat --defaults-file=${WORKSPACE}/liquibase-mvn/liquibase.properties --search-path=${WORKSPACE}/liquibase-mvn/src/main/resources/'
-                    sh(script: '${LIQUIBASE} status --verbose')
-                    sh(script: '${LIQUIBASE} release-locks')
-                    sh(script: '${LIQUIBASE} update')
+                    sh(script: LIQUIBASE + ' status --verbose')
+                    sh(script: LIQUIBASE + ' release-locks')
+                    sh(script: LIQUIBASE + ' update')
                 }
             }
         }
