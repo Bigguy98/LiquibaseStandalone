@@ -15,7 +15,7 @@ pipeline {
         stage ('Init') {
             steps {
                 script {
-                    sh(script: '',)
+                    echo "Hello world!"
                 }
             }
         }
