@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/demo_liquibase_mvn?autoReconnect=true
+    password: ''
+  liquibase:
+    change-log: classpath:db/changelog/changelog.xml
+  jpa:
+    hibernate:
+      ddl-auto: update

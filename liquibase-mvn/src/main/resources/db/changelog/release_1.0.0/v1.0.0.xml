@@ -1,0 +1,38 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd
+        http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.0.xsd">
+    <changeSet author="bugsmaker" id="10" context="Customer_A">
+        <createTable schemaName="demo_liquibase_mvn" tableName="province_table">
+            <column name="province" type="CHAR(20)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="bugsmaker" id="20" context="Customer_B">
+        <createTable schemaName="demo_liquibase_mvn" tableName="state_table">
+            <column name="state" type="CHAR(20)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="bugsmaker" id="30" context="all">
+        <createTable schemaName="demo_liquibase_mvn" tableName="name_table">
+            <column name="fullname" type="CHAR(20)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="bugsmaker" id="40" context="Customer_A OR Customer_B">
+        <createTable schemaName="demo_liquibase_mvn" tableName="sales">
+            <column name="sales_team" type="CHAR(20)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="102" author="bugsmaker" context="DEV">
+        <createTable tableName="animal_table">
+            <column name="id" type="int">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="breed" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

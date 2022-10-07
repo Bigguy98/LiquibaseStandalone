@@ -1,0 +1,3 @@
+To update liquibase:
+    mvn liquibase:update
+    mvn liquibase:status
